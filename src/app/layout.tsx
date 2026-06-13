@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next"
+ï»¿import type { Metadata, Viewport } from "next"
 import { Libre_Baskerville, Inter } from "next/font/google"
 import "./globals.css"
 
@@ -18,7 +18,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Bali Casa Hannah | Boutique Villa in Bali",
-  description: "Experience tranquil luxury at Bali Casa Hannah — a boutique villa nestled in the heart of Bali. Private pool, tropical garden, and personalized service.",
+  description: "Experience tranquil luxury at Bali Casa Hannah - a boutique villa nestled in the heart of Bali. Private pool, tropical garden, and personalized service.",
   keywords: ["boutique villa bali", "private pool villa", "bali accommodation", "luxury villa rental"],
   authors: [{ name: "Bali Casa Hannah" }],
   creator: "Bali Casa Hannah",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: "https://balicasahannah.com",
     siteName: "Bali Casa Hannah",
     title: "Bali Casa Hannah | Boutique Villa in Bali",
-    description: "Experience tranquil luxury at Bali Casa Hannah — a boutique villa with private pool and tropical garden.",
+    description: "Experience tranquil luxury at Bali Casa Hannah - a boutique villa with private pool and tropical garden.",
     images: [
       {
         url: "/og-image.jpg",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bali Casa Hannah | Boutique Villa in Bali",
-    description: "Experience tranquil luxury at Bali Casa Hannah — a boutique villa with private pool and tropical garden.",
+    description: "Experience tranquil luxury at Bali Casa Hannah - a boutique villa with private pool and tropical garden.",
     images: ["/og-image.jpg"],
   },
   verification: {
