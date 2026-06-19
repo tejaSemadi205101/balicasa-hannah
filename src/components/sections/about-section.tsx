@@ -1,10 +1,9 @@
 "use client"
-
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export function HeroSection() {
+export function AboutHomeSection() {
   return (
     <section className="bg-white" aria-labelledby="hero-heading">
       <div className="max-w-[1200px] mx-auto px-[56px] py-[96px]">

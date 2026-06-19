@@ -1,7 +1,10 @@
 "use client"
-
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Twitter, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { FaFacebook , FaLinkedin } from "react-icons/fa"
+import { AiFillInstagram } from "react-icons/ai";
+
+import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 
@@ -122,7 +125,7 @@ export function Footer() {
               className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
               aria-label="Instagram"
             >
-              <Instagram className="w-[20px] h-[20px]" />
+              <AiFillInstagram className="w-[20px] h-[20px]" />
             </a>
             <a
               href="https://facebook.com"
@@ -131,7 +134,7 @@ export function Footer() {
               className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
               aria-label="Facebook"
             >
-              <Facebook className="w-[20px] h-[20px]" />
+              <FaFacebook  className="w-[20px] h-[20px]" />
             </a>
             <a
               href="https://linkedin.com"
@@ -140,7 +143,7 @@ export function Footer() {
               className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-[20px] h-[20px]" />
+              <FaLinkedin  className="w-[20px] h-[20px]" />
             </a>
             <a
               href="https://twitter.com"
@@ -149,7 +152,7 @@ export function Footer() {
               className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
               aria-label="Twitter"
             >
-              <Twitter className="w-[20px] h-[20px]" />
+              <FaXTwitter className="w-[20px] h-[20px]" />
             </a>
           </div>
         </div>
