@@ -2,6 +2,7 @@
 import { Libre_Baskerville, Inter } from "next/font/google"
 import "./globals.css"
 
+
 const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
   variable: "--font-heading",

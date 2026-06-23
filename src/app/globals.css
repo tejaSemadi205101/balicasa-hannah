@@ -1,4 +1,5 @@
 ﻿@import "tailwindcss";
+@import "./styles/typography.css";
 
 @theme {
   /* ============ PRIMITIVES: COLOR ============ */
@@ -87,38 +88,51 @@
   --color-gold-500: #c9a55a;
   --color-gold-700: #9c7828;
 
-  /* ============ PRIMITIVES: TYPOGRAPHY ============ */
-  --font-serif: 'Libre Baskerville', Georgia, serif;
-  --font-sans: 'Inter', sans-serif;
+    /* ============================================================
+     PRIMITIVE — FONT FAMILY
+     ============================================================ */
+  --font-family-serif:   'Libre Baskerville', Georgia, serif;
+  --font-family-sans:    'Inter', sans-serif;
 
-  --font-size-10: 0.625rem;
-  --font-size-12: 0.75rem;
-  --font-size-14: 0.875rem;
-  --font-size-16: 1rem;
-  --font-size-18: 1.125rem;
-  --font-size-20: 1.25rem;
-  --font-size-24: 1.5rem;
-  --font-size-32: 2rem;
-  --font-size-40: 2.5rem;
-  --font-size-52: 3.25rem;
-  --font-size-64: 4rem;
-  --font-size-80: 5rem;
+  /* ============================================================
+     PRIMITIVE — FONT SIZE
+     ============================================================ */
+  --font-size-10:  0.625rem;   /* 10px */
+  --font-size-12:  0.75rem;    /* 12px */
+  --font-size-14:  0.875rem;   /* 14px */
+  --font-size-16:  1rem;       /* 16px */
+  --font-size-18:  1.125rem;   /* 18px */
+  --font-size-20:  1.25rem;    /* 20px */
+  --font-size-24:  1.5rem;     /* 24px */
+  --font-size-32:  2rem;       /* 32px */
+  --font-size-40:  2.5rem;     /* 40px */
+  --font-size-52:  3.25rem;    /* 52px */
+  --font-size-64:  4rem;       /* 64px */
+  --font-size-80:  5rem;       /* 80px */
 
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  /* ============================================================
+     PRIMITIVE — FONT WEIGHT
+     ============================================================ */
+  --font-weight-light:     300;
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
 
-  --leading-tight: 1.1;
-  --leading-snug: 1.3;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.7;
+  /* ============================================================
+     PRIMITIVE — LINE HEIGHT
+     ============================================================ */
+  --leading-tight:    1.1;
+  --leading-snug:     1.3;
+  --leading-normal:   1.5;
+  --leading-relaxed:  1.7;
 
-  --tracking-tight: -0.02em;
-  --tracking-normal: 0em;
-  --tracking-wide: 0.04em;
-  --tracking-wider: 0.1em;
+  /* ============================================================
+     PRIMITIVE — LETTER SPACING
+     ============================================================ */
+  --tracking-tight:   -0.02em;
+  --tracking-normal:   0em;
+  --tracking-wide:     0.04em;
+  --tracking-wider:    0.1em;
 
   /* ============ PRIMITIVES: SPACING (4px scale) ============ */
   --spacing-0: 0px;
@@ -492,9 +506,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+@layer components {
+  .icon-xs {
+    font-size: var(--icon-size-xs);
+  }
+
+  .icon-sm {
+    font-size: var(--icon-size-sm);
+  }
+
+  .icon-md {
+    font-size: var(--icon-size-md);
+  }
+
+  .icon-lg {
+    font-size: var(--icon-size-lg);
+  }
+
+  .icon-xl {
+    font-size: var(--icon-size-xl);
+  }
+
+  .icon-2xl {
+    font-size: var(--icon-size-2xl);
+  }
 }

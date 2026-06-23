@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/sections/hero-section"
 import { Footer } from "@/components/common/footer"
 import { AboutHomeSection } from "@/components/sections/about-section"
+import { FacilitiesOverviewSection } from "@/components/sections/facilities-overview-section"
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -9,6 +10,8 @@ import {
   NavigationMenuContent,
   NavigationMenuLink,
 } from "@/components/common/navigation-menu"
+import { USPVillaSection } from "@/components/sections/usp-villa-section"
+
 
 export default function Home() {
   return (
@@ -33,6 +36,8 @@ export default function Home() {
       </nav>
       <HeroSection />
       <AboutHomeSection />
+      <FacilitiesOverviewSection />
+      <USPVillaSection />
       <Footer />
     </div>
   )

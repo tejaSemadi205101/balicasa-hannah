@@ -1,12 +1,9 @@
 "use client"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import { FaFacebook , FaLinkedin } from "react-icons/fa"
-import { AiFillInstagram } from "react-icons/ai";
-
-import { FaXTwitter } from "react-icons/fa6";
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { Icon } from '@iconify-icon/react';
 
 const navigationLinks = {
   "The Villa": [
@@ -125,7 +122,7 @@ export function Footer() {
               className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
               aria-label="Instagram"
             >
-              <AiFillInstagram className="w-[20px] h-[20px]" />
+              <Icon icon="mdi:instagram" className="icon-lg" />
             </a>
             <a
               href="https://facebook.com"
@@ -134,7 +131,7 @@ export function Footer() {
               className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
               aria-label="Facebook"
             >
-              <FaFacebook  className="w-[20px] h-[20px]" />
+              <Icon icon="mynaui:facebook" className="icon-lg" />
             </a>
             <a
               href="https://linkedin.com"
@@ -143,7 +140,7 @@ export function Footer() {
               className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
               aria-label="LinkedIn"
             >
-              <FaLinkedin  className="w-[20px] h-[20px]" />
+              <Icon icon="basil:linkedin-outline" className="icon-lg" />
             </a>
             <a
               href="https://twitter.com"
@@ -152,7 +149,7 @@ export function Footer() {
               className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
               aria-label="Twitter"
             >
-              <FaXTwitter className="w-[20px] h-[20px]" />
+              <Icon icon="ri:twitter-x-line" className="icon-lg" />
             </a>
           </div>
         </div>
