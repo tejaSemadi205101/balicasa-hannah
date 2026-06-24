@@ -58,12 +58,12 @@ export function USPVillaSection({
 }: USPVillaSectionProps) {
   return (
     <section
-      className="w-full bg-white py-24 px-14"
+      className="w-full bg-white px-6 py-20 md:px-10 md:py-24 lg:px-14"
       aria-labelledby="usp-section-heading"
     >
       <div className="max-w-[1200px] mx-auto">
         {/* Section Header */}
-        <header className="flex flex-col items-center gap-2 mb-[50px] px-[216px] text-center">
+        <header className="mx-auto mb-[50px] flex max-w-[656px] flex-col items-center gap-2 text-center">
           <h2
             id="usp-section-heading"
             className="text-h2 text-gray-900"
@@ -76,20 +76,20 @@ export function USPVillaSection({
         </header>
 
         {/* USP Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2">
           {items.map((item) => (
             <article
               key={item.id}
-              className="flex flex-col gap-4"
+              className="flex h-full flex-col gap-4"
             >
               {/* Image */}
-              <div className="relative aspect-524/365 rounded-[6px] overflow-hidden">
+              <div className="relative aspect-[524/365] w-full overflow-hidden rounded-[6px]">
                 <Image
                   src={item.imageSrc}
                   alt={item.imageAlt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   placeholder="blur"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAB//2Q=="
                 />

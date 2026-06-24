@@ -1,14 +1,17 @@
 "use client"
 
 import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
 import { cn } from "@/lib/utils"
 
-const Separator = React.forwardRef<HTMLDivElement, React.ComponentPropsWithoutRef<typeof Slot>>(
+interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {
+  decorative?: boolean
+  orientation?: "horizontal" | "vertical"
+}
+
+const Separator = React.forwardRef<HTMLDivElement, SeparatorProps>(
   ({ className, orientation = "horizontal", decorative = true, ...props }, ref) => (
-    <Slot
+    <div
       ref={ref}
-      asChild
       {...props}
       className={cn(
         "shrink-0 bg-border",

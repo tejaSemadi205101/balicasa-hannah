@@ -11,6 +11,10 @@ import {
   NavigationMenuLink,
 } from "@/components/common/navigation-menu"
 import { USPVillaSection } from "@/components/sections/usp-villa-section"
+import { GalleryOverviewSection } from "@/components/sections/gallery-overview-section"
+import { TestimonialsOverview } from "@/components/sections/testimonials-overview-section"
+import { FAQSection } from "@/components/sections/faq-section"
+import { PreCTA } from "@/components/sections/pre-cta-section"
 
 
 export default function Home() {
@@ -37,7 +41,11 @@ export default function Home() {
       <HeroSection />
       <AboutHomeSection />
       <FacilitiesOverviewSection />
+      <GalleryOverviewSection />
       <USPVillaSection />
+      <TestimonialsOverview />
+      <FAQSection />
+      <PreCTA />
       <Footer />
     </div>
   )

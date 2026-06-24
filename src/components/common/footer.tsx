@@ -4,29 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Icon } from '@iconify-icon/react';
-
-const navigationLinks = {
-  "The Villa": [
-    { label: "Villa Gallery", href: "/villa-gallery" },
-    { label: "Location & Surrounding", href: "/location-surrounding" },
-  ],
-  Experiences: [
-    { label: "Villa Facilities", href: "/villa-facilities" },
-    { label: "Villa Services", href: "/villa-services" },
-  ],
-  "Plan Your Stay": [
-    { label: "Villa Rates", href: "/villa-rates" },
-    { label: "Check Availability", href: "/check-availability" },
-    { label: "Promotion", href: "/promotion" },
-    { label: "Travel Note", href: "/travel-note" },
-  ],
-  About: [
-    { label: "About Us", href: "/about-us" },
-    { label: "Testimonials", href: "/testimonials" },
-    { label: "Contact Us", href: "/contact-us" },
-    { label: "Waiver", href: "/waiver" },
-  ],
-}
+import { footerNavigationGroups } from "@/lib/site-pages"
 
 export function Footer() {
   return (
@@ -82,7 +60,7 @@ export function Footer() {
 
           {/* Columns 2-5: Navigation Links */}
           <div className="flex gap-[32px] flex-1">
-            {Object.entries(navigationLinks).map(([title, links]) => (
+            {Object.entries(footerNavigationGroups).map(([title, links]) => (
               <div key={title} className="w-[156px]">
                 <h2 className="font-[Libre_Baskerville] text-[16px] font-medium tracking-[-1.5%] mb-[16px]">
                   {title}

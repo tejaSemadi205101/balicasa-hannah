@@ -18,6 +18,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://balicasahannah.com"),
   title: "Bali Casa Hannah | Boutique Villa in Bali",
   description: "Experience tranquil luxury at Bali Casa Hannah - a boutique villa nestled in the heart of Bali. Private pool, tropical garden, and personalized service.",
   keywords: ["boutique villa bali", "private pool villa", "bali accommodation", "luxury villa rental"],

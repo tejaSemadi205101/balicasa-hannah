@@ -33,7 +33,7 @@ export function AboutHomeSection() {
               asChild
               className="gap-[10px] px-[24px] h-[40px] bg-[#55270B] hover:bg-[#55270B]/90 text-white rounded-[2px]"
             >
-              <Link href="/villa-gallery">
+              <Link href="/about">
                 <span className="font-inter text-[14px] font-semibold tracking-[-2%]">
                   Read More About the Villa
                 </span>

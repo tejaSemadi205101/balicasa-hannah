@@ -1,4 +1,4 @@
-@layer components {
+@layer utilities {
 
   .text-display-xl {
     font-family:    var(--font-family-serif);

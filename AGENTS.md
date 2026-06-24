@@ -70,18 +70,20 @@ Avoid:
 
 Frontend:
 
-- Next.js App Router
+- Next.js 16 (App Router)
+- React 19
 - TypeScript
-- Tailwind CSS v4
+- Tailwind CSS v4 (using `@tailwindcss/postcss`)
 - shadcn/ui
 
 Deployment:
 
 - Vercel
 
-CMS:
+Data Management:
 
-- Sanity
+- Local configuration via `src/lib/site-pages.ts` (Source of truth for dynamic routes)
+- JSON-LD Structured Data via `src/lib/schema.ts`
 
 Analytics:
 
@@ -98,6 +100,28 @@ Analytics:
 4. Accessibility is mandatory.
 5. SEO is mandatory.
 6. Performance is a feature.
+
+## Development Conventions
+
+### Architecture & Routing
+
+- **Dynamic Pages**: Managed via `src/app/[slug]/page.tsx`. To add a new page, update the `sitePages` array in `src/lib/site-pages.ts`.
+- **Component Hierarchy**:
+  - `src/components/ui/`: Atomic primitives (Radix UI based).
+  - `src/components/common/`: Global layout elements (Footer, Nav).
+  - `src/components/sections/`: Page-specific blocks.
+
+### Styling & Design System
+
+- **Typography**: Use semantic classes from `src/app/styles/typography.css` (e.g., `.text-h1`, `.text-body-md`) instead of arbitrary Tailwind sizes.
+- **Colors**: Use the custom theme variables defined in `src/app/globals.css` (e.g., Mahogany, Gold) to maintain the luxury brand identity.
+- **Fonts**: Headings use `Libre Baskerville` (`--font-heading`), body uses `Inter` (`--font-body`).
+
+### Tooling
+
+- **Package Manager**: `pnpm`
+- **Commands**: `pnpm dev`, `pnpm build`, `pnpm lint`.
+
 7. Simplicity over cleverness.
 
 ---

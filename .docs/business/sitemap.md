@@ -1,13 +1,18 @@
 Pages:
   Home
   About
-  Accommodation
   Gallery
+  Facilities
   Services
-  Experiences
+  Local Excursions
+  Rates
   Availability
-  Contact
+  Promotion
+  Contact Us
   Location & Surrounding
+  Travel Note
+  Waiver
+  Testimonials
 
 Shared Components:
   HeroSection
