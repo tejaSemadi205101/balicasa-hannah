@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
+import { Icon } from "@iconify-icon/react"
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -131,7 +131,7 @@ export function GalleryOverviewSection({
             <span className="text-label-md font-semibold">
               Browse the Full Gallery
             </span>
-            <ArrowUpRight className="h-[18px] w-[18px]" aria-hidden="true" />
+            <Icon icon="lucide:arrow-up-right" className="h-[18px] w-[18px]" aria-hidden="true" />
           </Link>
         </Button>
       </div>

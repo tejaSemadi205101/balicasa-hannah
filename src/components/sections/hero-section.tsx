@@ -1,58 +1,54 @@
 "use client"
 
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import * as React from "react"
 
 interface HeroSectionProps {
   backgroundImage?: string
 }
 
-export function HeroSection({ backgroundImage = "/images/hero/hero-image-3.png" }: HeroSectionProps) {
+export function HeroSection({ backgroundImage = "/videos/casa hannah herro.mp4" }: HeroSectionProps) {
   return (
     <section
-      className="relative w-full min-h-[80vh] flex items-end overflow-hidden"
+      className="relative w-full h-screen overflow-hidden flex flex-col justify-end"
       aria-labelledby="hero-heading"
       role="banner"
     >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
+      {/* Invisible H1 for SEO */}
+      <h1 id="hero-heading" className="sr-only">
+        Casa Hannah Luxury Private Villa Seminyak
+      </h1>
+
+      {/* Background Video & Main Overlay */}
+      <div className="absolute inset-0 z-0 bg-surface-inverse">
+        <video
           src={backgroundImage}
-          alt=""
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAB//2Q=="
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
         />
         
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/30 to-gray-900/80" />
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 mix-blend-multiply bg-linear-to-b from-gray-900/80 via-gray-900/30 via-20% to-gray-900/90 to-[92%]" aria-hidden="true" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 w-full px-[56px] pb-[50px]">
-        <div className="max-w-[1200px] mx-auto">
-          {/* Bottom Gradient Fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-[212px] bg-gradient-to-t from-gray-900 to-transparent pointer-events-none" aria-hidden="true" />
-          
-          <div className="flex lg:flex-row gap-[50px]">
-            <div className="max-w-[511px]">
-              <h1
-                id="hero-heading"
-                className="font-serif text-[40px] font-semibold leading-[56px] tracking-tight text-white"
-              >
-                Casa Hannah Luxury Private Villa Seminyak
-              </h1>
-            </div>
-            <div className="flex-1 max-w-[589px]">
-              <p className="font-sans text-[16px] font-normal leading-[24px] text-white">
-                A spacious 5-bedroom villa with room to gather, unwind, and create meaningful moments in one of Balis most sought-after destinations.
-              </p>
-            </div>
+      {/* Bottom Content Container */}
+      <div className="relative z-10 w-full mt-auto"> 
+        {/* Backdrop Blur Gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-80 lg:h-52 bg-linear-to-b from-gray-900/0 to-gray-900/80 backdrop-blur-md [-webkit-mask-image:linear-gradient(to_bottom,transparent,black_75%)] [mask-image:linear-gradient(to_bottom,transparent,black_75%)]" aria-hidden="true" />
+
+        {/* Text Content */}
+        <div className="relative mx-auto w-full max-w-[1200px] px-4 py-12 lg:px-14 flex flex-col lg:flex-row justify-start lg:items-center gap-2 lg:gap-12">
+          <div className="w-full lg:max-w-[511px]">
+            <h2 className="text-h1 lg:text-display-md text-(--color-text-inverse)">
+              Casa Hannah Luxury Private Villa Seminyak
+            </h2>
+          </div>
+          <div className="w-full lg:flex-1">
+            <p className="text-body-md text-(--color-text-inverse)">
+              A spacious 5-bedroom villa with room to gather, unwind, and create meaningful moments in one of Bali&apos;s most sought-after destinations.
+            </p>
           </div>
         </div>
       </div>

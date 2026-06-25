@@ -11,6 +11,8 @@ Shared Components:
 - GalleryGrid
 - TestimonialSection
 - FAQSection
+- Footer
+- Navbar
 ```
 
 ## Rules

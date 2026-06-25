@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
-import { Footer } from "@/components/common/footer"
+import { MainLayout } from "@/components/layout/main-layout"
+import { PageHeroSection } from "@/components/sections/page-hero-section"
 import { getPageUrl, getSitePage, siteConfig, sitePages } from "@/lib/site-pages"
 
 type PageProps = {
@@ -120,9 +121,14 @@ export default async function SitePage({ params }: PageProps) {
   }
 
   return (
-    <>
+    <MainLayout>
       <JsonLd data={pageSchema} />
-      <main className="bg-white">
+      <PageHeroSection
+        title={page.title}
+        summary={page.summary}
+        backgroundImage={page.heroImage}
+      />
+      <div className="bg-surface-main flex-1 w-full">
         <article className="mx-auto max-w-[960px] px-6 py-20 md:px-10 md:py-24 lg:px-14">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex flex-wrap items-center gap-2 text-body-sm text-gray-600">
@@ -137,11 +143,6 @@ export default async function SitePage({ params }: PageProps) {
               </li>
             </ol>
           </nav>
-
-          <header className="mb-10">
-            <h1 className="text-h1 text-gray-900">{page.title}</h1>
-            <p className="mt-4 text-body-lg text-gray-600">{page.summary}</p>
-          </header>
 
           <section aria-labelledby="page-overview-heading">
             <h2 id="page-overview-heading" className="text-h4 text-gray-900">
@@ -163,8 +164,7 @@ export default async function SitePage({ params }: PageProps) {
             </Link>
           </div>
         </article>
-      </main>
-      <Footer />
-    </>
+      </div>
+    </MainLayout>
   )
 }

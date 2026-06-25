@@ -48,33 +48,33 @@ const FAQ_DATA: FAQItem[] = [
 
 export const FAQSection = () => {
   return (
-    <section className="w-full py-16 px-4 md:px-14 bg-[var(--color-surface-main)] flex flex-col items-center gap-10">
+    <section className="w-full py-16 md:py-24 px-4 md:px-14 bg-surface-main flex flex-col items-center gap-12 md:gap-16">
       {/* Section Header */}
       <div className="text-center">
-        <h2 className="text-h2 md:text-display-md text-[var(--color-text-neutral-primary)] font-semibold leading-tight">
+        <h2 className="text-h2 md:text-h2 text-text-neutral-primary">
           Frequently Asked Questions
         </h2>
       </div>
 
       {/* FAQ Accordion Container */}
-      <div className="w-full max-w-[1088px] flex justify-center">
+      <div className="w-full max-w-7xl mx-auto">
         <Accordion 
           type="single" 
           collapsible 
-          className="w-full max-w-[740px] space-y-0"
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-24 w-full"
         >
           {FAQ_DATA.map((item, index) => (
             <AccordionItem 
               key={index} 
               value={`item-${index}`} 
-              className="border-b border-[var(--color-border-neutral-default)] px-2 md:px-6"
+              className="border-b border-border-neutral-default"
             >
-              <AccordionTrigger className="py-4 px-4 text-left hover:no-underline group">
-                <span className="text-body-sm md:text-label-md font-semibold text-[var(--color-text-neutral-primary)] leading-5 transition-colors group-hover:text-[var(--color-text-brand)]">
+              <AccordionTrigger className="py-6 px-0 text-left hover:no-underline group">
+                <span className="text-body-md font-semibold text-text-neutral-primary transition-colors group-hover:text-text-brand pr-4">
                   {item.question}
                 </span>
               </AccordionTrigger>
-              <AccordionContent className="px-4 pb-4 text-body-sm md:text-body-md text-[var(--color-text-neutral-secondary)] leading-relaxed">
+              <AccordionContent className="px-0 pb-6 text-body-md text-text-neutral-secondary leading-relaxed">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>

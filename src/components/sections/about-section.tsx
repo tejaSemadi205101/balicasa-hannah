@@ -1,76 +1,82 @@
-"use client"
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
+import Image from "next/image"
+import { Icon } from "@iconify-icon/react"
 import { Button } from "@/components/ui/button"
 
 export function AboutHomeSection() {
   return (
-    <section className="bg-white" aria-labelledby="hero-heading">
-      <div className="max-w-[1200px] mx-auto px-[56px] py-[96px]">
-        <div className="flex gap-[32px]">
-          {/* Left Column: Text Content */}
-          <div className="flex flex-col gap-[24px] flex-1">
-            <div className="flex flex-col gap-[8px]">
+    <section className="bg-(--color-surface-main)" aria-labelledby="about-heading">
+      <div className="mx-auto w-full max-w-[1200px] px-4 py-16 md:px-8 lg:px-14 lg:py-24 flex flex-col lg:flex-row gap-12 lg:gap-8 items-stretch">
+        {/* Left Column */}
+        <div className="flex w-full lg:flex-1 flex-col lg:justify-between gap-12">
+          {/* Text & Button */}
+
+          <div className="flex flex-col items-start gap-6">
+            <div className="flex flex-col gap-2">
               <h2
-                id="hero-heading"
-                className="font-[Libre_Baskerville] text-[24px] font-semibold tracking-[-1.5%] text-[#1C1917]"
+                id="about-heading"
+                className="text-h2 font-semibold text-(--color-text-neutral-primary)"
               >
                 Welcome to Casa Hannah Villa Seminyak
               </h2>
-              <p className="text-[14px] leading-[24px] tracking-[-2%] text-[#57534E]">
+              <p className="text-body-sm leading-6 text-(--color-text-neutral-secondary)">
                 Located in the heart of Seminyak, Casa Hannah is a private 5-bedroom villa
                 created for families and groups seeking space, comfort, and a seamless Bali
                 escape.
-                <br /><br />
+                <br />
+                <br />
                 Featuring a 20-metre swimming pool, generous living areas, dedicated villa
                 staff, and accommodation for up to 10 guests, every detail is designed to
                 make staying together feel effortless.
               </p>
             </div>
+
             <Button
-              variant="default"
-              size="sm"
               asChild
-              className="gap-[10px] px-[24px] h-[40px] bg-[#55270B] hover:bg-[#55270B]/90 text-white rounded-[2px]"
+              className="h-10 px-6 py-2.5 rounded-[2px] bg-(--color-button-primary-brand-default) hover:bg-(--color-button-primary-brand-hover) text-white"
             >
-              <Link href="/about">
-                <span className="font-inter text-[14px] font-semibold tracking-[-2%]">
+              <Link href="/about" className="inline-flex items-center gap-2.5">
+                <span className="text-body-sm font-semibold">
                   Read More About the Villa
                 </span>
-                <ArrowUpRight className="w-[18px] h-[18px]" />
+                <Icon icon="lucide:arrow-up-right" className="w-4 h-4" />
               </Link>
             </Button>
           </div>
 
-          {/* Right Column: Images */}
-          <div className="flex flex-col gap-[32px] flex-1">
-            {/* Top row: Two images side by side */}
-            <div className="flex gap-[32px]">
-              <div className="flex-1 rounded-[2px] overflow-hidden">
-                <img
-                  src="/images/hero/hero-image-1.png"
-                  alt="Casa Hannah Villa exterior view"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div className="flex-1 rounded-[2px] overflow-hidden">
-                <img
-                  src="/images/hero/hero-image-2.png"
-                  alt="Casa Hannah Villa interior living area"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
+          {/* 2 Small Images */}
+          <div className="flex flex-col md:flex-row gap-6 lg:gap-8">
+            <div className="relative w-full h-96 lg:h-auto lg:aspect-[293/253] rounded-[2px] overflow-hidden">
+              <Image
+                src="/images/hero/hero-image-1.png"
+                alt="Casa Hannah Villa exterior view"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 33vw"
+              />
             </div>
-
-            {/* Large feature image */}
-            <div className="rounded-[2px] overflow-hidden">
-              <img
-                src="/images/hero/hero-image-3.png"
-                alt="Casa Hannah Villa swimming pool area"
-                className="w-full h-auto object-cover"
+            <div className="relative w-full h-96 lg:h-auto lg:aspect-[293/253] rounded-[2px] overflow-hidden">
+              <Image
+                src="/images/hero/hero-image-2.png"
+                alt="Casa Hannah Villa interior living area"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 33vw"
               />
             </div>
           </div>
+        </div>
+
+        {/* Right Column / Large Image */}
+        <div className="relative w-full lg:w-[384px] h-96 lg:h-[549px] shrink-0 rounded-[2px] overflow-hidden">
+          <Image
+            src="/images/hero/hero-image-3.png"
+            alt="Casa Hannah Villa swimming pool area"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 384px"
+            priority
+          />
         </div>
       </div>
     </section>

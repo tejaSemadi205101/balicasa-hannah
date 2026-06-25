@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import Image from "next/image"
+
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Icon } from '@iconify-icon/react';
@@ -8,39 +9,25 @@ import { footerNavigationGroups } from "@/lib/site-pages"
 
 export function Footer() {
   return (
-    <footer className="bg-[#1C1917] text-white">
-      <div className="max-w-[1200px] mx-auto px-[56px] py-[50px]">
-        {/* Top Section - 5 columns */}
-        <div className="flex gap-[96px] mb-[16px]">
+    <footer className="bg-surface-inverse text-white">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-14 py-12">
+        {/* Top Section */}
+        <div className="flex flex-col lg:flex-row justify-between gap-12 mb-16">
           {/* Column 1: Logo + Address + Get Direction */}
-          <div className="flex flex-col gap-[32px] w-[156px]">
+          <div className="flex flex-col gap-8 lg:w-72">
             {/* Logo */}
-            <div className="w-[192.92px] h-[88.88px]">
-              {/* Replace with actual logo image */}
-              <svg
-                width="192.92"
-                height="88.88"
-                viewBox="0 0 192.92 88.88"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-white"
-              >
-                <text
-                  x="0"
-                  y="50"
-                  fontFamily="Libre Baskerville, serif"
-                  fontSize="32"
-                  fontWeight="500"
-                  fill="white"
-                >
-                  Casa Hannah
-                </text>
-              </svg>
+            <div className="relative w-40 h-16 md:w-48 md:h-20">
+              <Image
+                src="/images/logos/logo-casa-hannah-light.png"
+                alt="Casa Hannah Logo"
+                fill
+                className="object-contain object-left"
+              />
             </div>
 
             {/* Address */}
-            <div className="flex flex-col gap-[16px]">
-              <p className="text-[14px] leading-[24px] tracking-[-2%] text-white">
+            <div className="flex flex-col gap-4">
+              <p className="text-body-sm text-white">
                 Jl. Beraban Banjar Taman - Kerobokan No.102 X, Seminyak, Kec.
                 Kuta, Badung Utara, Bali 80361
               </p>
@@ -48,29 +35,29 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="gap-[8px] px-0 h-auto bg-transparent hover:bg-transparent text-white"
+                className="gap-2 px-0 h-auto bg-transparent hover:bg-transparent text-white w-fit"
               >
-                <span className="text-[14px] leading-[24px] tracking-[-2%] font-semibold">
+                <span className="text-label-md font-semibold">
                   Get direction
                 </span>
-                <ArrowRight className="w-[24px] h-[24px]" />
+                <Icon icon="hugeicons:arrow-right-01" className="icon-lg" />
               </Button>
             </div>
           </div>
 
           {/* Columns 2-5: Navigation Links */}
-          <div className="flex gap-[32px] flex-1">
+          <div className="flex flex-wrap lg:flex-nowrap justify-between gap-8 flex-1 lg:pl-16">
             {Object.entries(footerNavigationGroups).map(([title, links]) => (
-              <div key={title} className="w-[156px]">
-                <h2 className="font-[Libre_Baskerville] text-[16px] font-medium tracking-[-1.5%] mb-[16px]">
+              <div key={title} className="w-40">
+                <h2 className="text-h6 text-white mb-4">
                   {title}
                 </h2>
-                <nav className="flex flex-col gap-[4px]">
+                <nav className="flex flex-col gap-1">
                   {links.map((link) => (
                     <Link
                       key={link.label}
                       href={link.href}
-                      className="flex items-center gap-[10px] px-0 py-[10px] text-[14px] leading-[20px] text-white hover:text-white/70 transition-colors"
+                      className="flex items-center gap-2.5 py-2.5 text-body-sm text-white hover:text-white/70 transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -82,52 +69,51 @@ export function Footer() {
         </div>
 
         {/* Bottom Section: Copyright + Terms + Social Icons */}
-        <Separator className="border-[#292524] my-[16px]" />
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-[16px]">
-          <div className="flex flex-col md:flex-row gap-[16px] items-center">
-            <p className="text-[14px] leading-[16px] text-white text-center md:text-left">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full border-t border-border-inverse-default pt-4">
+          <div className="flex flex-col md:flex-row justify-between md:justify-start gap-4 md:gap-8 items-center w-full md:w-auto">
+            <p className="text-label-sm text-white text-center md:text-left">
               © 2026 Villa Casa Hannah. All rights reserved
             </p>
-            <p className="text-[14px] leading-[16px] text-white text-center md:text-left">
+            <p className="text-label-sm text-white text-center md:text-left">
               Term & conditions
             </p>
           </div>
-          <div className="flex gap-[16px]">
+          <div className="flex justify-between md:justify-end gap-4 w-full md:w-auto">
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
+              className="flex items-center justify-center p-2 hover:bg-white/10 rounded-full transition-colors"
               aria-label="Instagram"
             >
-              <Icon icon="mdi:instagram" className="icon-lg" />
+              <Icon icon="hugeicons:instagram" className="icon-lg" />
             </a>
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
+              className="flex items-center justify-center p-2 hover:bg-white/10 rounded-full transition-colors"
               aria-label="Facebook"
             >
-              <Icon icon="mynaui:facebook" className="icon-lg" />
+              <Icon icon="hugeicons:facebook-01" className="icon-lg" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
+              className="flex items-center justify-center p-2 hover:bg-white/10 rounded-full transition-colors"
               aria-label="LinkedIn"
             >
-              <Icon icon="basil:linkedin-outline" className="icon-lg" />
+              <Icon icon="hugeicons:linkedin-01" className="icon-lg" />
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-[4px] p-[8px] hover:bg-white/10 rounded-full transition-colors"
+              className="flex items-center justify-center p-2 hover:bg-white/10 rounded-full transition-colors"
               aria-label="Twitter"
             >
-              <Icon icon="ri:twitter-x-line" className="icon-lg" />
+              <Icon icon="hugeicons:new-twitter" className="icon-lg" />
             </a>
           </div>
         </div>

@@ -12,6 +12,7 @@ export interface SitePage {
   navigationLabel: string
   description: string
   summary: string
+  heroImage?: string
   highlights: string[]
   primaryCta: {
     label: string
