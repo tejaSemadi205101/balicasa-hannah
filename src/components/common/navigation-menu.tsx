@@ -42,7 +42,7 @@ export function NavigationMenu() {
       href: "#experiences",
       items: [
         { label: "Facilities", href: "/facilities" },
-        { label: "Services", href: "/services" },
+        { label: "Services", href: "/villa-services" },
       ]
     },
     { 
@@ -120,7 +120,7 @@ export function NavigationMenu() {
               
               {/* Desktop Dropdown */}
               {link.items && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col bg-white shadow-md py-2 min-w-56 z-50">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col bg-white shadow-md py-2 min-w-56 z-50 gap-1">
                   {link.items.map((subItem) => (
                     <Link
                       key={subItem.label}

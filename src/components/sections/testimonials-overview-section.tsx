@@ -78,7 +78,7 @@ export const TestimonialsOverview = () => {
         <h2 className="text-h2 md:text-display-md text-[var(--color-text-neutral-primary)] font-semibold leading-tight">
           What Our Guests Say
         </h2>
-        <p className="text-body-sm md:text-body-md text-[var(--color-text-neutral-secondary)] font-normal leading-normal max-w-2xl">
+        <p className="text-body-md md:text-body-md text-[var(--color-text-neutral-secondary)] font-normal leading-normal max-w-2xl">
           Stories from travelers who chose Casa Mateo for their Bali stay
         </p>
       </div>

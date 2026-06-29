@@ -6,12 +6,12 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-interface FAQItem {
+export interface FAQItem {
   question: string;
   answer: string;
 }
 
-const FAQ_DATA: FAQItem[] = [
+const DEFAULT_FAQ_DATA: FAQItem[] = [
   {
     question: 'What is Casa Hannah Villa?',
     answer: 'Casa Hannah is a private 5-bedroom Luxury Villa Bali located in Oberoi Seminyak. Designed for families and groups of up to 10 guests, Casa Hannah combines spacious living areas, a private swimming pool, and personalized hospitality in one of Bali\'s most popular lifestyle destinations.',
@@ -46,13 +46,18 @@ const FAQ_DATA: FAQItem[] = [
   },
 ];
 
-export const FAQSection = () => {
+interface FAQSectionProps extends React.HTMLAttributes<HTMLElement> {
+  data?: FAQItem[];
+  title?: string;
+}
+
+export const FAQSection = ({ data = DEFAULT_FAQ_DATA, title = "Frequently Asked Questions", className, ...props }: FAQSectionProps) => {
   return (
-    <section className="w-full py-16 md:py-24 px-4 md:px-14 bg-surface-main flex flex-col items-center gap-12 md:gap-16">
+    <section className={`w-full py-16 md:py-24 px-4 md:px-14 bg-surface-main flex flex-col items-center gap-12 md:gap-16 ${className || ''}`} {...props}>
       {/* Section Header */}
       <div className="text-center">
         <h2 className="text-h2 md:text-h2 text-text-neutral-primary">
-          Frequently Asked Questions
+          {title}
         </h2>
       </div>
 
@@ -63,7 +68,7 @@ export const FAQSection = () => {
           collapsible 
           className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-24 w-full"
         >
-          {FAQ_DATA.map((item, index) => (
+          {data.map((item, index) => (
             <AccordionItem 
               key={index} 
               value={`item-${index}`} 

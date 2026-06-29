@@ -104,8 +104,8 @@ export function GalleryOverviewSection({
                   className={cn(
                     "relative w-full overflow-hidden rounded-[2px] bg-gray-100",
                     image.size === "large"
-                      ? "aspect-[349/410]"
-                      : "aspect-[349/196]"
+                      ? "aspect-349/410"
+                      : "aspect-349/196"
                   )}
                 >
                   <Image
@@ -131,7 +131,7 @@ export function GalleryOverviewSection({
             <span className="text-label-md font-semibold">
               Browse the Full Gallery
             </span>
-            <Icon icon="lucide:arrow-up-right" className="h-[18px] w-[18px]" aria-hidden="true" />
+            <Icon icon="hugeicons:arrow-up-right-01" className="icon-sm" />
           </Link>
         </Button>
       </div>

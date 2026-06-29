@@ -1,6 +1,6 @@
-﻿import type { Metadata, Viewport } from "next"
+import type { Metadata, Viewport } from "next"
 import { Libre_Baskerville, Inter } from "next/font/google"
-import "./globals.css"
+import "../globals.css"
 
 
 const libreBaskerville = Libre_Baskerville({
